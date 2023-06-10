@@ -6,6 +6,9 @@ const cors = require('cors');
 // const axios = require('axios');
 const airbnb = require('./modules/airbnb');
 
+
+const getCamping = require('./modules/camping');
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -26,5 +29,8 @@ app.get('*', (req, res) => {
 app.use((error, req, res, next) => {
   res.status(500).send(error.message);
 });
+
+app.get('/camping', getCamping);
+
 
 app.listen(PORT, ()=> console.log(`listening on ${PORT}`));
