@@ -27,9 +27,8 @@ async function getAirbnb(req, res, next) {
 
   try {
     if(cache[key]) {
-      res.status(200).send(cache[key].data);
       console.log('cache hit'); // delete later
-      console.log(cache); // delete later
+      res.status(200).send(cache[key].data);
     } else {
       let response = await axios.request(options);
       let formattedData = response.data.results.map(airbnb => new Airbnb(airbnb));
