@@ -5,7 +5,8 @@ const axios = require('axios');
 
 async function getCamping (req, res, next) {
   const { query } = req.query;
-  const url = `https://ridb.recreation.gov/api/v1/facilities?query=${query}&limit=10&activity=6,CAMPING`;
+  // const url = `https://ridb.recreation.gov/api/v1/facilities?query=${query}&limit=10&activity=6,CAMPING`;
+  const url = `https://ridb.recreation.gov/api/v1/facilities?query=${query}&limit=5`;
   console.log(url);
   const config = {
     headers: {

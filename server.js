@@ -5,8 +5,6 @@ const express = require('express');
 const cors = require('cors');
 // const axios = require('axios');
 const airbnb = require('./modules/airbnb');
-
-
 const getCamping = require('./modules/camping');
 
 const app = express();
@@ -20,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/airbnb', airbnb);
+app.get('/camping', getCamping);
 
 app.get('*', (req, res) => {
   res.status(404).send('Route not found');
@@ -30,7 +29,6 @@ app.use((error, req, res, next) => {
   res.status(500).send(error.message);
 });
 
-app.get('/camping', getCamping);
 
 
 app.listen(PORT, ()=> console.log(`listening on ${PORT}`));
