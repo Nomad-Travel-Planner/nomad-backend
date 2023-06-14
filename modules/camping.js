@@ -24,7 +24,7 @@ class Campsite {
   constructor(campingObj){
     this.site = campingObj.FacilityName;
     this.fee = campingObj.FacilityUseFeeDescription;
-    this.description = campingObj.FacilityDescription;
+    this.description = campingObj.FacilityTypeDescription;
 
   }
 }
