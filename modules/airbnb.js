@@ -1,8 +1,7 @@
 'use strict';
-
+require('dotenv').config();
 const axios = require('axios');
 const cache = require('./cache');
-// const cache = require('./cache');
 
 async function getAirbnb(req, res, next) {
   const { location, checkin, checkout, adults, children, pets } = req.query;
@@ -20,7 +19,7 @@ async function getAirbnb(req, res, next) {
       page: 1
     },
     headers: {
-      'X-RapidAPI-Key': 'dee89c78bdmsh9100d2fcedf2b8ap1e29c5jsn4600328e594a',
+      'X-RapidAPI-Key': process.env.AIRBNB_API_KEY,
       'X-RapidAPI-Host': 'airbnb13.p.rapidapi.com'
     }
   };
