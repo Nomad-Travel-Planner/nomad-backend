@@ -43,6 +43,7 @@ travelRoutes.editTravelRoute = async function(req, res, next) {
   const { id } = req.params;
   const data = req.body;
   console.log('req.user', req.user);
+  console.log(req);
   data.email = req.user.email;
   data.location = req.body.location || data.location;
   data.campsite = req.body.campsite || data.campsite;
