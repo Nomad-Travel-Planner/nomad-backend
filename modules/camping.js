@@ -25,9 +25,7 @@ class Campsite {
     this.site = campingObj.FacilityName;
     this.fee = campingObj.FacilityUseFeeDescription;
     this.description = campingObj.FacilityTypeDescription;
-    this.image = campingObj.MEDIA[0].URL;
-    console.log(this.image);
-
+    this.image = campingObj.MEDIA;
   }
 }
 
